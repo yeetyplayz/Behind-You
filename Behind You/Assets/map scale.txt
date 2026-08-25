@@ -1,0 +1,1 @@
+The scale for the map will be 1 pixel means a 4x4 cube. 
