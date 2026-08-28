@@ -5,6 +5,9 @@ public class MazeGenerator : MonoBehaviour
     [Header("Prefabs")]
     public GameObject wallPrefab;
     public GameObject floorPrefab;
+    public GameObject floorPrefabSpawnG = null; // ghost spawn
+    public GameObject floorPrefabSpawnP = null; // player spawn
+    public GameObject cheeseBallPrefab1;
 
     [Header("Maze Settings")]
     public float cellSize = 4f;
@@ -19,7 +22,7 @@ public class MazeGenerator : MonoBehaviour
         "#.#.####.##.##.###.#.####.#.###.##.##.####.#.#",
         "#...#..#.##.##..#..#..##..#..#..##.##.#..#...#",
         "#.###.##..#.#####.##.####.##.#####.#..##.###.#",
-        "#.#...###.....#...##.####.##...#.....###...#.#",
+        "#.#.?.###.....#...##.####.##...#.....###.?.#.#",
         "#...#.#...#####.###..####..###.#####...#.#...#",
         "#####.#####...#.....######.....#...#####.#####",
         "#......###..###.###.#....#.###.###..###......#",
@@ -33,8 +36,8 @@ public class MazeGenerator : MonoBehaviour
         "####.#.##.########.########.########.##.#.####",
         "#....#.#..............................#.#....#",
         "#.####...############################...####.#",
-        "#.####..#............................#..####.#",
-        "#.####..#............................#..####.#",
+        "#.####..#!!!!!1!!!!!!!!!!!!!!!!!!!1!!#..####.#",
+        "#.####..#!!1!!!!!!!!!!!!!!!!!!!1!!!!!#..####.#",
         "#.####...############################...####.#",
         "#....#.#..............................#.#....#",
         "####.#.##.########.########.########.##.#.####",
@@ -48,7 +51,7 @@ public class MazeGenerator : MonoBehaviour
         "#......###..###.###.#....#.###.###..###......#",
         "#####.#####...#.....######.....#...#####.#####",
         "#...#.#...#####.###..####..###.#####...#.#...#",
-        "#.#...###.....#...##.####.##...#.....###...#.#",
+        "#.#.?.###.....#...##.####.##...#.....###.?.#.#",
         "#.###.##..#.#####.##.####.##.#####.#..##.###.#",
         "#...#..#.##.##..#..#..##..#..#..##.##.#..#...#",
         "#.#.####.##.##.###.#.####.#.###.##.##.####.#.#",
@@ -76,8 +79,10 @@ public class MazeGenerator : MonoBehaviour
                 if (maze[y][x] == '.')
                 {
                     Instantiate(floorPrefab, position, Quaternion.identity, transform);
+                    position.y = 1;
+                    Instantiate(cheeseBallPrefab1, position, Quaternion.identity, transform);
                     position.y = 22;
-                    Instantiate(floorPrefab, position, Quaternion .identity, transform);
+                    //Instantiate(floorPrefab, position, Quaternion .identity, transform);
                 }
 
                 if (maze[y][x] == '#')
@@ -85,9 +90,24 @@ public class MazeGenerator : MonoBehaviour
                     position.y = 11;
                     Instantiate(wallPrefab, position, Quaternion.identity, transform);
                 }
+                if (maze[y][x] == '!')
+                {
+                    Instantiate(floorPrefab, position, Quaternion.identity, transform);
+                    position.y = 22;
+                    //Instantiate(floorPrefab, position, Quaternion.identity, transform);
+                }
+                if (maze[y][x] == '1')
+                {
+                    Instantiate(floorPrefabSpawnG, position, Quaternion.identity, transform);
+                }
+                if (maze[y][x] == '?')
+                {
+                    Instantiate(floorPrefabSpawnP, position, Quaternion.identity, transform);
+                }
             }
         }
     }
+    [ContextMenu("Clear Maze")]
     void ClearMaze()
     {
         while (transform.childCount > 0)
