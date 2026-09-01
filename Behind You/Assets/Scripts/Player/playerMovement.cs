@@ -3,7 +3,7 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
     // Movement Variables
-    private float movementSpeed = 400f;
+    private float movementSpeed = 4000f;
     private float maxMovement = 9f;
     private float hor;
     private float vert;
@@ -52,9 +52,9 @@ public class playerMovement : MonoBehaviour
             );
 
             rb.linearVelocity = new Vector3(
-                horVel.x * 0.7f,
+                horVel.x * 0.2f,
                 rb.linearVelocity.y,
-                horVel.z * 0.7f
+                horVel.z * 0.2f
             );
         }
         Vector3 horizontalVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
@@ -84,7 +84,7 @@ public class playerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground")) 
         { 
             isGrounded = true;
-            movementSpeed = 400f;
+            movementSpeed = 4000f;
         }
         else return;
     }

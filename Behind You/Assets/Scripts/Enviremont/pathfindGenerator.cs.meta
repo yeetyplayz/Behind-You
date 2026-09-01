@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 01152e79479886e4393308036dcb9f16
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - straightXX: {fileID: 5938116038607172330, guid: 66d9023c7db82614482e5e1fab25ea6b, type: 3}
+  - straightZZ: {fileID: 7362524166350234654, guid: cc7a5a8db44870841b39f0a3cdfb336c, type: 3}
+  - cornerL: {fileID: 557272357475980039, guid: de4ee31861325c245bcdf2db80ccc60e, type: 3}
+  - cornerRL: {fileID: 6451478537518722554, guid: 39c367c38eb0a62499c3b7b076779cc4, type: 3}
+  - cornerR: {fileID: 4234878291468809354, guid: 8e453d5a875c27940959a4ecdeed807e, type: 3}
+  - cornerRR: {fileID: 1785442881823584753, guid: 15d95af6df6d1cf449090f0198dd0d75, type: 3}
+  - tSectionU: {fileID: 4149600475434703068, guid: 8a877cf30ca4154408cbdf6c3cd27ae3, type: 3}
+  - tSectionD: {fileID: 3241473701243474868, guid: d32793061f58b654696ff91ea6c28361, type: 3}
+  - tSectionR: {fileID: 2406842693568357574, guid: 05aad5f965289dc41afd79ddc7bd3f5c, type: 3}
+  - tSectionL: {fileID: 6977288888258358417, guid: 4c102b34c87751d448240d91958b6353, type: 3}
+  - xSection: {fileID: 1920346483683965009, guid: 8883b4de5e3c72a4daf277e616a6028f, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
