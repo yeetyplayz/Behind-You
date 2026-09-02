@@ -5,8 +5,11 @@ public class MazeGenerator : MonoBehaviour
     [Header("Prefabs")]
     public GameObject wallPrefab;
     public GameObject floorPrefab;
-    public GameObject floorPrefabSpawnG = null; // ghost spawn
-    public GameObject floorPrefabSpawnP = null; // player spawn
+    public GameObject floorPrefabSpawnG1;
+    public GameObject floorPrefabSpawnG2;
+    public GameObject floorPrefabSpawnG3;
+    public GameObject floorPrefabSpawnG4;
+    public GameObject floorPrefabSpawnP;
     public GameObject cheeseBallPrefab1;
 
     [Header("Maze Settings")]
@@ -36,8 +39,8 @@ public class MazeGenerator : MonoBehaviour
         "####.#.##.########.########.########.##.#.####",
         "#....#.#..............................#.#....#",
         "#.####...############################...####.#",
-        "#.####..#!!!!!1!!!!!!!!!!!!!!!!!!!1!!#..####.#",
-        "#.####..#!!1!!!!!!!!!!!!!!!!!!!1!!!!!#..####.#",
+        "#.####..#!!!!!2!!!!!!!!!!!!!!!!!!!4!!#..####.#",
+        "#.####..#!!1!!!!!!!!!!!!!!!!!!!3!!!!!#..####.#",
         "#.####...############################...####.#",
         "#....#.#..............................#.#....#",
         "####.#.##.########.########.########.##.#.####",
@@ -96,10 +99,10 @@ public class MazeGenerator : MonoBehaviour
                     position.y = 22;
                     //Instantiate(floorPrefab, position, Quaternion.identity, transform);
                 }
-                if (maze[y][x] == '1')
-                {
-                    Instantiate(floorPrefabSpawnG, position, Quaternion.identity, transform);
-                }
+                if (maze[y][x] == '1') { Instantiate(floorPrefabSpawnG1, position, Quaternion.identity, transform); }
+                if (maze[y][x] == '2') { Instantiate(floorPrefabSpawnG2, position, Quaternion.identity, transform); }
+                if (maze[y][x] == '3') { Instantiate(floorPrefabSpawnG3, position, Quaternion.identity, transform); }
+                if (maze[y][x] == '4') { Instantiate(floorPrefabSpawnG4, position, Quaternion.identity, transform); }
                 if (maze[y][x] == '?')
                 {
                     Instantiate(floorPrefabSpawnP, position, Quaternion.identity, transform);

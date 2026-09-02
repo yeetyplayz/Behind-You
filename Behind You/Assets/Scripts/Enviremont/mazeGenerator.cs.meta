@@ -1,2 +1,19 @@
 fileFormatVersion: 2
 guid: d6340dad1a80c424a93c963cc4024ed7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - wallPrefab: {fileID: 5249279308718397301, guid: 06275c38298d8e540bd82c4a86815477, type: 3}
+  - floorPrefab: {fileID: 3119687465407301811, guid: 0fb6e4a3dec6278448e2ffcc23ec85de, type: 3}
+  - floorPrefabSpawnG1: {fileID: 2321959580766666739, guid: ab97f0d61b976da44adb22145043ab9c, type: 3}
+  - floorPrefabSpawnG2: {fileID: 8509257927844770507, guid: 01144af335347ea44ba861d411774c43, type: 3}
+  - floorPrefabSpawnG3: {instanceID: 0}
+  - floorPrefabSpawnG4: {instanceID: 0}
+  - floorPrefabSpawnP: {fileID: 1651049871266247285, guid: 70fb8e6120ed07c40b829e6e9cd689ba, type: 3}
+  - cheeseBallPrefab1: {fileID: 2721628839623978558, guid: d9820ec316c61a340886e5aa892bacb1, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: 89adbf07b1e5f0e4fb26202c02837bf1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - ghostSpawn: {instanceID: 0}
+  - player: {fileID: 3310305245345551171, guid: b2f316bab52447b4c910c83fdebf11aa, type: 3}
+  - agent: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
