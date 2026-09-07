@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cut off ghost
+  m_Name: Lost ghost
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -36,19 +36,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
-        m_Texture: {fileID: 2800000, guid: b43d577ffe533d649acf389ff8a5bf86, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1bcf7a30b44bf4343a079b440f5d8d47, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailMask:
-        m_Texture: {fileID: 2800000, guid: 74f4073b23acaa745ac7ad05f9001194, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7508c8d44ec25654c8e90dd1bb0c29fb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
-        m_Texture: {fileID: 2800000, guid: 6a5adc72897c03c4984a4e5452444609, type: 3}
+        m_Texture: {fileID: 2800000, guid: e98e62c89e1fe0c4aa90762605203a95, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 9e9c3cfe687b26749ae907011d8d058e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 97d565da0617d7c47b5d0a572ced1a17, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -120,11 +120,11 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1048576, g: 0, b: 5627.625, a: 1}
+    - _EmissionColor: {r: 1024, g: 1024, b: 1024, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &3609157350638280401
+--- !u!114 &5049149008586904821
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
