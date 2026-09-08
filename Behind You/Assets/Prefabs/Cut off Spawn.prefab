@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 4645996768292056831}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 3.5, z: 0}
   m_LocalScale: {x: 0.25, y: 1, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -264,8 +264,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::greenGhostLogic
   ghostSpawn: {fileID: 0}
   playerPos: {x: 0, y: 0, z: 0}
+  player: {fileID: 3310305245345551171, guid: b2f316bab52447b4c910c83fdebf11aa, type: 3}
+  playerLogic: {fileID: 7286058709772391237, guid: b2f316bab52447b4c910c83fdebf11aa, type: 3}
   ghostVar: 0
   agent: {fileID: 0}
+  destination: {x: 0, y: 0, z: 0}
 --- !u!1 &7629010382807163579
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +278,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7976018328977550586}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}

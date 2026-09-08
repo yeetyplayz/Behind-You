@@ -7,11 +7,12 @@ TagManager:
   - Ground
   - Small
   - Big
+  - Lost
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Maze
   - Water
   - UI
   - Path

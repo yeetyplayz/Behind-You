@@ -5,13 +5,14 @@ public class playerLogic : MonoBehaviour
 {
     public int points;
     public int highScore;
-    public mainGhostLogic mainGhostLogic;
+    public mainGhostLogic[] ghosts;
     public int section = 0;
 
     private void Update()
     {
         if (points >= highScore) { highScore = points; }
-        mainGhostLogic.playerPos = transform.position;
+        ghosts[0].playerPos = transform.position;
+        ghosts[1].playerPos = transform.position;
     }
     public void GainScore(string score)
     {

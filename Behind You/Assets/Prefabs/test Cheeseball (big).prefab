@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5490597295787332122}
   - component: {fileID: 8958882359874808388}
   - component: {fileID: 2025014871993078487}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: test Cheeseball (big)
   m_TagString: Big
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 1583942825817055897}
   - component: {fileID: 2293991099247561388}
   - component: {fileID: 7162758831499973546}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Area Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

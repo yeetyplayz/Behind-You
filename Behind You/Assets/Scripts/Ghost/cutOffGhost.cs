@@ -3,6 +3,7 @@ using UnityEngine.AI;
 
 public class cutOffGhost : mainGhostLogic
 {
+    public Vector3 destination;
     private void Start()
     {
         ghostVar = 1;
@@ -10,6 +11,8 @@ public class cutOffGhost : mainGhostLogic
     }
     private void Update()
     {
+        playerPos = player.transform.position;
         agent.SetDestination(playerPos);
+        destination = agent.destination;
     }
 }
