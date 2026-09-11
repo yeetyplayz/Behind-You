@@ -15,10 +15,6 @@ public class mainGhostLogic : MonoBehaviour
         playerLogic = player.GetComponent<playerLogic>();
         ghostSpawn = GetComponentInParent<ghostSpawn>();
     }
-    private void FixedUpdate()
-    {
-        playerPos = player.transform.position;
-    }
 
     public void Die()
     {

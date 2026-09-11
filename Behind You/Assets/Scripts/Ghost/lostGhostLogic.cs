@@ -3,46 +3,26 @@ using UnityEngine.AI;
 
 public class lostGhostLogic : mainGhostLogic
 {
-    private bool go = true;
-    private float time = 5f;
-    private sections sections;
-    private GameObject section;
+    public sections sections;
+    public GameObject section;
     public int sectionNumber;
     private void Start()
     {
+        sections = section.GetComponent<sections>();
         ghostVar = 1;
         sectionNumber = 1;
         agent = GetComponent<NavMeshAgent>();
     }
     private void FixedUpdate()
     {
-        while (time > 0 ) { time -= Time.deltaTime; Debug.Log(time); }
-        if (sectionNumber != playerLogic.section) { agent.SetDestination(playerPos); Debug.Log(sectionNumber); Debug.Log(sectionNumber); Debug.Log(sectionNumber); }
+        playerPos = player.transform.position;
+        if (sectionNumber != playerLogic.section) { if (!agent.hasPath) { agent.SetDestination(playerPos); } }
         if (sectionNumber == playerLogic.section)
         {
-            int r = Random.Range(1,5);
-            switch (r)
+            if (!agent.hasPath || agent.remainingDistance < 0.5f)
             {
-                case 1:
-                    {
-                        agent.SetDestination(sections.sectLoc[0]);
-                        break;
-                    }
-                case 2:
-                    {
-                        agent.SetDestination(sections.sectLoc[1]);
-                        break;
-                    }
-                case 3:
-                    {
-                        agent.SetDestination(sections.sectLoc[2]);
-                        break;
-                    }
-                case 4:
-                    {
-                        agent.SetDestination(sections.sectLoc[3]);
-                        break;
-                    }
+                int r = Random.Range(0, sections.sectLoc.Length);
+                agent.SetDestination(sections.sectLoc[r]);
             }
         }
     }
@@ -50,5 +30,9 @@ public class lostGhostLogic : mainGhostLogic
     {
         section = gameSection;
         sections = section.GetComponent<sections>();
+    }
+    public void IncreaseDiff()
+    {
+        agent.speed = agent.speed * 1.15f;
     }
 }

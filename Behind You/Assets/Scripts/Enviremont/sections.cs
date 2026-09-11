@@ -15,26 +15,30 @@ public class sections : MonoBehaviour
         sectLoc[2] = section[2].transform.position;
         sectLoc[3] = section[3].transform.position;
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Lost")
-        {
-            lostGhostLogic = GetComponent<lostGhostLogic>();
-            lostGhostLogic.sectionNumber = sectionNumber;
-            lostGhostLogic.GetSection(gameObject);
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Lost")
+    //    {
+    //        lostGhostLogic = other.GetComponent<lostGhostLogic>();
+    //        lostGhostLogic.sectionNumber = sectionNumber;
+    //        lostGhostLogic.GetSection(gameObject);
+    //    }
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        playerLogic = other.GetComponent<playerLogic>();
+    //    }
+    //}
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Maze")) return;
         if (other.gameObject.tag == "Player")
         {
-            playerLogic = GetComponent<playerLogic>();
+            playerLogic = other.GetComponent<playerLogic>();
             playerLogic.section = sectionNumber;
         }
         else if (other.gameObject.tag == "Lost")
         {
-            lostGhostLogic = GetComponent<lostGhostLogic>();
+            lostGhostLogic = other.GetComponent<lostGhostLogic>();
             lostGhostLogic.sectionNumber = sectionNumber;
             lostGhostLogic.GetSection(gameObject);
         }
