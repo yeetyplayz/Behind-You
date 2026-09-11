@@ -2,20 +2,22 @@ using UnityEngine;
 
 public class gameManager : MonoBehaviour
 {
-    public GameObject iMaze;
-    public GameObject maze;
+    public MazeGenerator maze;
     public playerLogic pl;
     public lostGhostLogic lost;
     public cutOffGhost cut;
 
-    public void StartGame()
+    private void FixedUpdate()
     {
-            
+        if (pl.points == 10320)
+        { 
+            IncreaseDiff();
+        }
     }
     public void IncreaseDiff()
     {
-        Vector3 s;
-        s = transform.position;
-        Instantiate(iMaze, s, Quaternion.identity);
+        maze.RespawnBalls();
+        lost.IncreaseDiff();
+        cut.IncreaseDiff();
     }
 }

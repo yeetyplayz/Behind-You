@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 public class lostGhostLogic : mainGhostLogic
 {
@@ -9,7 +10,6 @@ public class lostGhostLogic : mainGhostLogic
     private void Start()
     {
         sections = section.GetComponent<sections>();
-        ghostVar = 1;
         sectionNumber = 1;
         agent = GetComponent<NavMeshAgent>();
     }
@@ -30,6 +30,16 @@ public class lostGhostLogic : mainGhostLogic
     {
         section = gameSection;
         sections = section.GetComponent<sections>();
+    }
+    public void Die() { StartCoroutine(DieRoutine()); }
+    IEnumerator DieRoutine()
+    {
+        MeshRenderer mr = GetComponent<MeshRenderer>();
+        mr.enabled = false;
+        agent.SetDestination(transform.parent.position);
+        while (agent.hasPath && agent.remainingDistance > agent.stoppingDistance) { yield return null; }
+        yield return new WaitForSeconds(10f);
+        mr.enabled = true;
     }
     public void IncreaseDiff()
     {
