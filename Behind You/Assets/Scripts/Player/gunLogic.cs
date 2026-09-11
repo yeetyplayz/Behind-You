@@ -27,4 +27,11 @@ public class gunLogic : MonoBehaviour
             }
         }
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            Fire();
+        }
+    }
 }
