@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5990725455656260874}
   - component: {fileID: 5967807237684694670}
   - component: {fileID: 1400940447422649547}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: test Cheeseball (small)
   m_TagString: Small
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 1813784653540866218}
   - component: {fileID: 7137851777321224258}
   - component: {fileID: 6462445025303808757}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Area Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1

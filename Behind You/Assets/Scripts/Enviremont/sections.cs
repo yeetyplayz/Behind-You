@@ -2,20 +2,45 @@ using UnityEngine;
 
 public class sections : MonoBehaviour
 {
+    public GameObject[] section;
+    public Vector3[] sectLoc;
     private playerLogic playerLogic;
     private lostGhostLogic lostGhostLogic;
-    public int section;
-    private void OnTriggerEnter(Collider other)
+    public int sectionNumber;
+
+    private void Start()
     {
+        sectLoc[0] = section[0].transform.position;
+        sectLoc[1] = section[1].transform.position;
+        sectLoc[2] = section[2].transform.position;
+        sectLoc[3] = section[3].transform.position;
+    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Lost")
+    //    {
+    //        lostGhostLogic = other.GetComponent<lostGhostLogic>();
+    //        lostGhostLogic.sectionNumber = sectionNumber;
+    //        lostGhostLogic.GetSection(gameObject);
+    //    }
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        playerLogic = other.GetComponent<playerLogic>();
+    //    }
+    //}
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Maze")) return;
         if (other.gameObject.tag == "Player")
         {
-            playerLogic = GetComponent<playerLogic>();
-            playerLogic.section = section;
+            playerLogic = other.GetComponent<playerLogic>();
+            playerLogic.section = sectionNumber;
         }
-        if (other.gameObject.tag == "Lost")
+        else if (other.gameObject.tag == "Lost")
         {
-            lostGhostLogic = GetComponent<lostGhostLogic>();
-            lostGhostLogic.section = section;
+            lostGhostLogic = other.GetComponent<lostGhostLogic>();
+            lostGhostLogic.sectionNumber = sectionNumber;
+            lostGhostLogic.GetSection(gameObject);
         }
         else return;
     }
