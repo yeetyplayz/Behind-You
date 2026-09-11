@@ -45,4 +45,14 @@ public class lostGhostLogic : mainGhostLogic
     {
         agent.speed = agent.speed * 1.15f;
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            playerLogic.Die();
+        }
+        {
+            
+        }
+    }
 }

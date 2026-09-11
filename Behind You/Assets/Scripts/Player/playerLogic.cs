@@ -19,4 +19,8 @@ public class playerLogic : MonoBehaviour
         if (score == "small") { points += 10; }
         if (score == "big") { points += 50;  }
     }
+    public void Die()
+    {
+         Application.Quit();
+    }
 }

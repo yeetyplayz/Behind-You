@@ -29,4 +29,11 @@ public class cutOffGhost : mainGhostLogic
         yield return new WaitForSeconds(10f);
         mr.enabled = true;
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            playerLogic.Die();
+        }
+    }
 }
