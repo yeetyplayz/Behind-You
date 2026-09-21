@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class gameManager : MonoBehaviour
 {
+    public uiManager uiManager;
     public MazeGenerator maze;
     public playerLogic pl;
     public lostGhostLogic lost;
@@ -19,5 +20,14 @@ public class gameManager : MonoBehaviour
         maze.RespawnBalls();
         lost.IncreaseDiff();
         cut.IncreaseDiff();
+    }
+    public void ResetGame()
+    {
+
+    }
+    private void GameOver()
+    {
+        //uiManager.
+        //ResetGame();
     }
 }

@@ -21,6 +21,7 @@ public class playerLogic : MonoBehaviour
     }
     public void Die()
     {
-         Application.Quit();
+        Debug.Log("death");
+        Application.Quit();
     }
 }
