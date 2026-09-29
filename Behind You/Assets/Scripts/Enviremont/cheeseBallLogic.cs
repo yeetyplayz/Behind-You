@@ -4,6 +4,22 @@ public class cheeseBallLogic : MonoBehaviour
 {
     private playerLogic pL;
     private gunLogic gL;
+    private bool uOrD = true; // true is up, false is down.
+    private void FixedUpdate()
+    {
+        float jitter = 1f;
+        Vector3 pos = transform.position;
+        if (pos.y <= 0.8f || uOrD) 
+        { 
+            transform.Translate(Vector3.up * jitter * Time.deltaTime); uOrD = true; 
+            if (pos.y >= 1.5f ) { uOrD = false; }
+        }
+        else if (pos.y >= 1.5f || uOrD == false) 
+        { 
+            transform.Translate(Vector3.down * jitter * Time.deltaTime); uOrD = false;
+            if (pos.y <= 0.8f) { uOrD = true; }
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         pL = other.GetComponent<playerLogic>();

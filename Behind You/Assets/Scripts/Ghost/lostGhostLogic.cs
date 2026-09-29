@@ -7,17 +7,19 @@ public class lostGhostLogic : mainGhostLogic
     public sections sections;
     public GameObject section;
     public int sectionNumber;
+    private bool dead;
     private void Start()
     {
         sections = section.GetComponent<sections>();
         sectionNumber = 1;
         agent = GetComponent<NavMeshAgent>();
+        Debug.LogError(agent);
     }
     private void FixedUpdate()
     {
         playerPos = player.transform.position;
-        if (sectionNumber != playerLogic.section) { if (!agent.hasPath) { agent.SetDestination(playerPos); } }
-        if (sectionNumber == playerLogic.section)
+        if (sectionNumber != playerLogic.section && dead == false) { if (!agent.hasPath) { agent.SetDestination(playerPos); } }
+        if (sectionNumber == playerLogic.section && dead == false)
         {
             if (!agent.hasPath || agent.remainingDistance < 0.5f)
             {
@@ -34,12 +36,19 @@ public class lostGhostLogic : mainGhostLogic
     public void Die() { StartCoroutine(DieRoutine()); }
     IEnumerator DieRoutine()
     {
+        Debug.Log("lost died");
+        dead = true;
         MeshRenderer mr = GetComponent<MeshRenderer>();
+        MeshRenderer mrc = GetComponentInChildren<MeshRenderer>();
         mr.enabled = false;
+        mrc.enabled = false;
         agent.SetDestination(transform.parent.position);
         while (agent.hasPath && agent.remainingDistance > agent.stoppingDistance) { yield return null; }
         yield return new WaitForSeconds(10f);
+        Debug.Log("back to it.");
         mr.enabled = true;
+        mrc.enabled = true;
+        dead = false;
     }
     public void IncreaseDiff()
     {

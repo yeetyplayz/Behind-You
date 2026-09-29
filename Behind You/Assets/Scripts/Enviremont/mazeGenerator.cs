@@ -99,7 +99,7 @@ public class MazeGenerator : MonoBehaviour
 
                 if (maze[y][x] == '#')
                 {
-                    position.y = 11;
+                    position.y = 0;
                     Instantiate(wallPrefab, position, Quaternion.identity, transform);
                 }
                 if (maze[y][x] == '!')
