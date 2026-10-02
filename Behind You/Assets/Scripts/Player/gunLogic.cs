@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class gunLogic : MonoBehaviour
 {
-    private int ammo = 99;
+    private int ammo = 0;
     private int range = 100;
     private RaycastHit hit;
     public GameObject cam;
