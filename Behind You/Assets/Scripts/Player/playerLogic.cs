@@ -4,7 +4,7 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class playerLogic : MonoBehaviour
 {
-    private TMP_Text score;
+    public TMP_Text score;
     public gameManager g;
     public int points;
     public int highScore;
