@@ -5,6 +5,13 @@ public class cheeseBallLogic : MonoBehaviour
     private playerLogic pL;
     private gunLogic gL;
     private bool uOrD = true; // true is up, false is down.
+    public AudioClip pickupSound;
+    public AudioSource AudioSource;
+
+    private void Start()
+    {
+        AudioSource = GetComponent<AudioSource>();
+    }
     private void FixedUpdate()
     {
         float jitter = 1f;
@@ -29,7 +36,11 @@ public class cheeseBallLogic : MonoBehaviour
         { 
             pL.GainScore("big");
             gL.GainAmmo(1);
+            AudioSource.clip = pickupSound;
+                    AudioSource.Play();
+
         }
+        
         Destroy(gameObject);
     }
 }
