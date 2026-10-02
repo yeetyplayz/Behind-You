@@ -14,7 +14,7 @@ public class gameManager : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (pl.points == 10320 && pl != null)
+        if (pl != null && pl.points == 10320)
         { 
             IncreaseDiff();
         }
@@ -32,11 +32,13 @@ public class gameManager : MonoBehaviour
         pl = maze.GetComponentInChildren<playerLogic>();
         lost = maze.GetComponentInChildren<lostGhostLogic>();
         cut = maze.GetComponentInChildren<cutOffGhost>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
     public void ExitGame() { Application.Quit(); }
     public void GameOver()
     {
         uiManager.EnableUi(1);
+        Cursor.lockState = CursorLockMode.None;
         maze.ClearMaze();
     }
 }
