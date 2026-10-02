@@ -8,9 +8,15 @@ public class gunLogic : MonoBehaviour
     public GameObject cam;
     private lostGhostLogic l;
     private cutOffGhost c;
+    public AudioClip fire;
+    public AudioSource AudioSource;
 
     public void GainAmmo(int count) { ammo += count; }
 
+    private void Start()
+    {
+        AudioSource = GetComponent<AudioSource>();
+    }
     private void Fire()
     {
         if (ammo <= 0) { Debug.LogWarning("Empty Magazine"); return; }
@@ -18,6 +24,8 @@ public class gunLogic : MonoBehaviour
         Debug.DrawRay(cam.transform.position, cam.transform.forward * range, Color.red);
         if (ammo >= 1) 
         { 
+            AudioSource.clip = fire;
+            AudioSource.Play();
             if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
             {
                 if (hit.collider.gameObject.tag == "Lost")
