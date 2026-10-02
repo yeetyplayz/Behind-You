@@ -4,13 +4,17 @@ public class gameManager : MonoBehaviour
 {
     public uiManager uiManager;
     public MazeGenerator maze;
-    public playerLogic pl;
-    public lostGhostLogic lost;
-    public cutOffGhost cut;
+    private playerLogic pl;
+    private lostGhostLogic lost;
+    private cutOffGhost cut;
 
+    private void Start()
+    {
+        maze.ClearMaze();
+    }
     private void FixedUpdate()
     {
-        if (pl.points == 10320)
+        if (pl.points == 10320 && pl != null)
         { 
             IncreaseDiff();
         }
@@ -21,13 +25,19 @@ public class gameManager : MonoBehaviour
         lost.IncreaseDiff();
         cut.IncreaseDiff();
     }
-    public void ResetGame()
+    public void StartGame()
     {
+        uiManager.EnableUi(5);
+        maze.GenerateMaze();
+        pl = maze.GetComponentInChildren<playerLogic>();
+        lost = maze.GetComponentInChildren<lostGhostLogic>();
+        cut = maze.GetComponentInChildren<cutOffGhost>();
+    }
+    public void ExitGame() { Application.Quit(); }
+    public void GameOver()
+    {
+        maze.ClearMaze();
 
     }
-    private void GameOver()
-    {
-        //uiManager.
-        //ResetGame();
-    }
+
 }

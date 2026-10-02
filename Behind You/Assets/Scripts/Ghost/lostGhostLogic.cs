@@ -36,18 +36,12 @@ public class lostGhostLogic : mainGhostLogic
     public void Die() { StartCoroutine(DieRoutine()); }
     IEnumerator DieRoutine()
     {
-        Debug.Log("lost died");
         dead = true;
-        MeshRenderer mr = GetComponent<MeshRenderer>();
-        MeshRenderer mrc = GetComponentInChildren<MeshRenderer>();
-        mr.enabled = false;
-        mrc.enabled = false;
+        gameObject.SetActive(false);
         agent.SetDestination(transform.parent.position);
         while (agent.hasPath && agent.remainingDistance > agent.stoppingDistance) { yield return null; }
         yield return new WaitForSeconds(10f);
-        Debug.Log("back to it.");
-        mr.enabled = true;
-        mrc.enabled = true;
+        gameObject.SetActive(true);
         dead = false;
     }
     public void IncreaseDiff()

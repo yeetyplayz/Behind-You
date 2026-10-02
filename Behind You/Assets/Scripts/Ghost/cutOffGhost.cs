@@ -26,15 +26,12 @@ public class cutOffGhost : mainGhostLogic
     {
         Debug.Log("cut died");
         dead = true;
-        MeshRenderer mr = GetComponent<MeshRenderer>();
-        MeshRenderer mrc = GetComponentInChildren<MeshRenderer>();
-        mr.enabled = false;
-        mrc.enabled = false;
+        gameObject.SetActive(false);
         agent.ResetPath();
         agent.SetDestination(transform.parent.position);
         while (agent.hasPath && agent.remainingDistance > agent.stoppingDistance) { yield return null; }
         yield return new WaitForSeconds(10f);
-        mr.enabled = true;
+        gameObject.SetActive(true);
         dead = false;
     }
     private void OnCollisionEnter(Collision collision)
