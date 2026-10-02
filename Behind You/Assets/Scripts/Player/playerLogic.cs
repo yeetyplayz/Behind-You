@@ -22,6 +22,6 @@ public class playerLogic : MonoBehaviour
     }
     public void Die()
     {
-        //g.
+        g.GameOver();
     }
 }
