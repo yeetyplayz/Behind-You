@@ -10,6 +10,11 @@ public class playerLogic : MonoBehaviour
     public int highScore;
     public int section = 0;
 
+    private void Start()
+    {
+        g = FindAnyObjectByType<gameManager>();
+    }
+
     private void Update()
     {
         score.text = "Score: " + points;

@@ -37,7 +37,7 @@ public class cheeseBallLogic : MonoBehaviour
             pL.GainScore("big");
             gL.GainAmmo(1);
             AudioSource.clip = pickupSound;
-                    AudioSource.Play();
+            AudioSource.Play();
 
         }
         

@@ -27,7 +27,7 @@ public class gameManager : MonoBehaviour
     }
     public void StartGame()
     {
-        uiManager.EnableUi(5);
+        uiManager.DisableUi();
         maze.GenerateMaze();
         pl = maze.GetComponentInChildren<playerLogic>();
         lost = maze.GetComponentInChildren<lostGhostLogic>();

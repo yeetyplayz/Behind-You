@@ -9,6 +9,7 @@ public class cutOffGhost : mainGhostLogic
     private bool dead;
     private void Start()
     {
+        player = FindAnyObjectByType<playerLogic>().gameObject;
         agent = GetComponent<NavMeshAgent>();
     }
     private void FixedUpdate()

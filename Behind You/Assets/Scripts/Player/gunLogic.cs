@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class gunLogic : MonoBehaviour
@@ -10,6 +11,7 @@ public class gunLogic : MonoBehaviour
     private cutOffGhost c;
     public AudioClip fire;
     public AudioSource AudioSource;
+    public TMP_Text amm;
 
     public void GainAmmo(int count) { ammo += count; }
 
@@ -45,6 +47,7 @@ public class gunLogic : MonoBehaviour
     }
     private void Update()
     {
+        amm.text = "Ammo Left " + ammo;
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Fire();

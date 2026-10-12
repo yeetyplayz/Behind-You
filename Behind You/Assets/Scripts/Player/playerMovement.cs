@@ -7,7 +7,7 @@ public class playerMovement : MonoBehaviour
     private float movementSpeed = 10f;
     private Vector3 moveDir;
     public Transform cameraTransform;
-    private float sensitivity = 100f;
+    private float sensitivity = 250f;
     private float xRotation = 0f;
 
     private bool isGrounded;

@@ -80,6 +80,8 @@ public class MazeGenerator : MonoBehaviour
                     -y * cellSize
                 );
                 if (maze[y][x] == '?') { Instantiate(floorPrefab, position, Quaternion.identity, transform); position.y = 1; Instantiate(player, position, Quaternion.identity, transform); }
+                if (maze[y][x] == '1') { Instantiate(floorPrefabSpawnG1, position, Quaternion.identity, transform); }
+                if (maze[y][x] == '2') { Instantiate(floorPrefabSpawnG2, position, Quaternion.identity, transform); }
                 if (maze[y][x] == '.')
                 {
                     Instantiate(floorPrefab, position, Quaternion.identity, transform);
@@ -114,8 +116,6 @@ public class MazeGenerator : MonoBehaviour
                     position.y = 6;
                     Instantiate(floorPrefab, position, Quaternion.identity, transform);
                 }
-                if (maze[y][x] == '1') { Instantiate(floorPrefabSpawnG1, position, Quaternion.identity, transform); }
-                if (maze[y][x] == '2') { Instantiate(floorPrefabSpawnG2, position, Quaternion.identity, transform); }
                 if (maze[y][x] == '3') { Instantiate(floorPrefabSpawnG3, position, Quaternion.identity, transform); }
                 if (maze[y][x] == '4') { Instantiate(floorPrefabSpawnG4, position, Quaternion.identity, transform); }
             }

@@ -1,16 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class uiManager : MonoBehaviour
 {
     public GameObject[] uiObjects;
-    private List<int> uiStuff = new List<int>() {  };
-    private int lastUi;
+    private bool isPaused = false;
 
     private void Start()
     {
         EnableUi(0);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!isPaused)
+            {
+                Pause(1);
+            }
+            else
+            {
+                Pause(2);
+            }
+        }
     }
     public void DisableUi()
     {
@@ -23,7 +38,6 @@ public class uiManager : MonoBehaviour
     {
         DisableUi();
         uiObjects[ui].SetActive(true);
-        lastUi = ui;
     }
     IEnumerator startGame2()
     {
@@ -35,5 +49,20 @@ public class uiManager : MonoBehaviour
     public void Go(int i)
     {
         StartCoroutine(startGame2());
+    }
+    private void Pause(int i)
+    {
+        if (i == 1)
+        {
+            isPaused = true;
+            EnableUi(5);
+            Time.timeScale = 0f;
+        }
+        else if (i == 2)
+        {
+            isPaused = false;
+            DisableUi();
+            Time.timeScale = 1f;
+        }
     }
 }

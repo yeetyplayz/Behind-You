@@ -4,10 +4,11 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - ghostSpawn: {instanceID: 0}
   - player: {fileID: 3310305245345551171, guid: b2f316bab52447b4c910c83fdebf11aa, type: 3}
   - playerLogic: {fileID: 7286058709772391237, guid: b2f316bab52447b4c910c83fdebf11aa, type: 3}
   - agent: {instanceID: 0}
+  - sections: {instanceID: 0}
+  - section: {fileID: 2987759120362482211, guid: 88556026045e830409154c2e7ed2a615, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

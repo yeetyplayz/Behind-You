@@ -8,12 +8,14 @@ public class lostGhostLogic : mainGhostLogic
     public GameObject section;
     public int sectionNumber;
     private bool dead;
+    private Vector3 destination;
     private void Start()
     {
-        sections = section.GetComponent<sections>();
+        agent = gameObject.GetComponent<NavMeshAgent>();
+        sections = section.GetComponentInChildren<sections>();
         sectionNumber = 1;
-        agent = GetComponent<NavMeshAgent>();
-        Debug.LogError(agent);
+        player = FindAnyObjectByType<playerLogic>().gameObject;
+        playerLogic = player.GetComponent<playerLogic>();
     }
     private void FixedUpdate()
     {
@@ -27,6 +29,7 @@ public class lostGhostLogic : mainGhostLogic
                 agent.SetDestination(sections.sectLoc[r]);
             }
         }
+        destination = 
     }
     public void GetSection(GameObject gameSection)
     {
@@ -53,9 +56,6 @@ public class lostGhostLogic : mainGhostLogic
         if (collision.gameObject.tag == "Player")
         {
             playerLogic.Die();
-        }
-        {
-            
         }
     }
 }
