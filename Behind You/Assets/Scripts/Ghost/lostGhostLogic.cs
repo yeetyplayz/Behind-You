@@ -8,10 +8,11 @@ public class lostGhostLogic : mainGhostLogic
     public GameObject section;
     public int sectionNumber;
     private bool dead;
-    private Vector3 destination;
+    public Vector3 destination;
     private void Start()
     {
         agent = gameObject.GetComponent<NavMeshAgent>();
+        section = transform.parent.parent.parent.gameObject;
         sections = section.GetComponentInChildren<sections>();
         sectionNumber = 1;
         player = FindAnyObjectByType<playerLogic>().gameObject;
@@ -29,7 +30,7 @@ public class lostGhostLogic : mainGhostLogic
                 agent.SetDestination(sections.sectLoc[r]);
             }
         }
-        destination = 
+        destination = agent.destination;
     }
     public void GetSection(GameObject gameSection)
     {
@@ -42,7 +43,7 @@ public class lostGhostLogic : mainGhostLogic
         dead = true;
         gameObject.SetActive(false);
         agent.SetDestination(transform.parent.position);
-        while (agent.hasPath && agent.remainingDistance > agent.stoppingDistance) { yield return null; }
+        while (agent.hasPath && agent.remainingDistance > agent.stoppingDistance) { agent.path = null; }
         yield return new WaitForSeconds(10f);
         gameObject.SetActive(true);
         dead = false;
