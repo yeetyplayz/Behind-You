@@ -37,8 +37,6 @@ public class gameManager : MonoBehaviour
     public void ExitGame() { Application.Quit(); }
     public void GameOver()
     {
-        uiManager.EnableUi(1);
-        Cursor.lockState = CursorLockMode.None;
-        maze.ClearMaze();
+        Application.Quit();
     }
 }

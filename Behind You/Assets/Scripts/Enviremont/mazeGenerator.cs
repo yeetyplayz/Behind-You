@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class MazeGenerator : MonoBehaviour
 {
@@ -124,9 +125,15 @@ public class MazeGenerator : MonoBehaviour
     [ContextMenu("Clear Maze")]
     public void ClearMaze()
     {
+        StartCoroutine(Clear());
+    }
+
+    IEnumerator Clear()
+    {
         while (transform.childCount > 0)
         {
-            DestroyImmediate(transform.GetChild(0).gameObject);
+            yield return new WaitForSeconds(0.001f);
+            Destroy(transform.GetChild(0).gameObject);
         }
     }
     [ContextMenu("Respawn Balls")]
